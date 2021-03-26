@@ -20,13 +20,13 @@ config.trg_spk = 'p227'
 sample_rate = 16000
 
 #Paths
-wav_path = ".data/VCTK/wav48"
-wav16_path = ".data/vctk_16"
-mc_train_path = "./data/mc/train"
-mc_test_path = "./data/mc/test"
-logs_path = "./logs"
-models_path = "./models"
-convert_dir = "./converted"
+wav_path = "./Voice_Conversion/data/VCTK/wav48"
+wav16_path = "./Voice_Conversion/data/vctk_16"
+mc_train_path = "./Voice_Conversion/data/mc/train"
+mc_test_path = "./Voice_Conversion/data/mc/test"
+logs_path = "./Voice_Conversion/logs"
+models_path = "./Voice_Conversion/models"
+convert_dir = "./Voice_Conversion/converted"
 
 #NN hyperparams
 
