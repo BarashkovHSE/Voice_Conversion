@@ -70,7 +70,7 @@ if __name__ == '__main__':
     config.wav_dir = cfg.wav16_path
     config.log_dir = cfg.logs_path
     config.model_save_dir = cfg.models_path
-    config.sample_dir = './samples'
+    config.sample_dir = './Voice_Conversion/samples'
     config.log_step = 10
     config.sample_step = 5000
     config.model_save_step = 15000
