@@ -13,8 +13,8 @@ speakers_used = ['p225', 'p227', 'p228', 'p229', 'p230', 'p231', 'p232',
 num_speakers = 70
 num_converted_wavs = 15
 resume_iters = 35000
-config.src_spk = 'p225'
-config.trg_spk = 'p227'
+src_spk = 'p225'
+trg_spk = 'p227'
 
 
 sample_rate = 16000
