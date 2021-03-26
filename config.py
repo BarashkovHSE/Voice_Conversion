@@ -20,13 +20,13 @@ trg_spk = 'p227'
 sample_rate = 16000
 
 #Paths
-wav_path = "./Voice_Conversion/data/VCTK-data/VCTK-Corpus/wav48"
-wav16_path = "./Voice_Conversion/data/vctk_16"
-mc_train_path = "./Voice_Conversion/data/mc/train"
-mc_test_path = "./Voice_Conversion/data/mc/test"
-logs_path = "./Voice_Conversion/logs"
-models_path = "./Voice_Conversion/models"
-convert_dir = "./Voice_Conversion/converted"
+wav_path = "/home/albert/Voice_Conversion/data/VCTK-data/VCTK-Corpus/wav48"
+wav16_path = "/home/albert/Voice_Conversion/data/vctk_16"
+mc_train_path = "/home/albert/Voice_Conversion/data/mc/train"
+mc_test_path = "/home/albert/Voice_Conversion/data/mc/test"
+logs_path = "/home/albert/Voice_Conversion/logs"
+models_path = "/home/albert/Voice_Conversion/models"
+convert_dir = "/home/albert/Voice_Conversion/converted"
 
 #NN hyperparams
 
