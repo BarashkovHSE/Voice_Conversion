@@ -20,7 +20,7 @@ trg_spk = 'p227'
 sample_rate = 16000
 
 #Paths
-wav_path = "./Voice_Conversion/data/VCTK/wav48"
+wav_path = "./Voice_Conversion/data/VCTK-data/VCTK-Corpus/wav48"
 wav16_path = "./Voice_Conversion/data/vctk_16"
 mc_train_path = "./Voice_Conversion/data/mc/train"
 mc_test_path = "./Voice_Conversion/data/mc/test"
