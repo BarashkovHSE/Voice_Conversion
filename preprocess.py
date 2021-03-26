@@ -80,10 +80,10 @@ def get_spk_world_feats(spk_fold_path, mc_dir_train, mc_dir_test, sample_rate=16
 if __name__ == '__main__':
 
     sample_rate_default = 16000
-    origin_wavpath_default = "./data/VCTK-data/wav48"
-    target_wavpath_default = "./data/vctk_16"
-    mc_dir_train_default = './data/mc/train'
-    mc_dir_test_default = './data/mc/test'
+    origin_wavpath_default = cfg.wav_path
+    target_wavpath_default = cfg.wav16_path
+    mc_dir_train_default = cfg.mc_train_path
+    mc_dir_test_default = cfg.mc_test_path
 
     sample_rate = 16000
     origin_wavpath = origin_wavpath_default
