@@ -13,7 +13,7 @@ class ConditionalInstanceNormalisation(nn.Module):
     def __init__(self, in_channel, n_speakers):
         super(ConditionalInstanceNormalisation, self).__init__()
 
-        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.dim_in = in_channel
         self.gamma = nn.Linear(n_speakers, in_channel)
