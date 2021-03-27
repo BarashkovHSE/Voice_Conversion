@@ -13,6 +13,7 @@ from data_loader import to_categorical
 import librosa
 from utils import *
 from tqdm import tqdm
+import torch.nn as nn
 
 
 class Solver(object):
@@ -77,7 +78,8 @@ class Solver(object):
         self.print_network(self.G, 'G')
         self.print_network(self.D, 'D')
 
-            
+        self.G = nn.DataParallel(self.G)
+        self.D = nn.DataParallel(self.D)
         self.G.to(self.device)
         self.D.to(self.device)
 
