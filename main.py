@@ -49,7 +49,7 @@ if __name__ == '__main__':
     config.lambda_rec = 50
     config.lambda_gp = 10
     config.sampling_rate = 16000
-    config.batch_size = 64
+    config.batch_size = 100
     config.num_iters = 300000
     config.num_iters_decay = 100000
     config.g_lr = 0.0001
