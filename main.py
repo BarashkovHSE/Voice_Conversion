@@ -60,8 +60,8 @@ if __name__ == '__main__':
     config.beta2 = 0.999
     config.beta = 0.5
     config.gamma = 0.5
-    config.resume_iters = 190000
-    config.test_iters=100000
+    config.resume_iters = 180000
+    config.test_iters=50000
     config.num_workers=8
     config.mode='train'
     config.use_tensorboard=True
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     config.sample_dir = './Voice_Conversion/samples'
     config.log_step = 10
     config.sample_step = 5000
-    config.model_save_step = 15000
+    config.model_save_step = 5000
     config.lr_update_step=1000
 
     main(config)
