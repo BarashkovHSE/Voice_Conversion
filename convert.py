@@ -128,9 +128,9 @@ if __name__ == '__main__':
     parser.add_argument('--train_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/train")
     parser.add_argument('--test_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/test")
     parser.add_argument('--wav_dir', type=str, default="/home/albert/Voice_Conversion/data/vctk_16")
-    parser.add_argument('--log_dir', type=str, default="/home/albert/Voice_Conversion/logs")
-    parser.add_argument('--model_save_dir', type=str, default="/home/albert/Voice_Conversion/models")
-    parser.add_argument('--convert_dir', type=str, default="/home/albert/Voice_Conversion/converted")
+    parser.add_argument('--log_dir', type=str, default="/home/albert/Model3/logs")
+    parser.add_argument('--model_save_dir', type=str, default="/home/albert/Model3/models")
+    parser.add_argument('--convert_dir', type=str, default="/home/albert/Model3/converted")
 
 
     config = parser.parse_args()
