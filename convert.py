@@ -111,21 +111,43 @@ def test(config):
 
 
 if __name__ == '__main__':
-    def config():
-        pass
+#     def config():
+#         pass
+    
+    parser = argparse.ArgumentParser()
 
-    config.num_speakers = 70
-    config.num_converted_wavs = 5
-    config.resume_iters = 300000
-    config.src_spk = 'p225'
-    config.trg_spk = 'p227'
-        # Model configuration.
-    config.train_data_dir =  cfg.mc_train_path
-    config.test_data_dir = cfg.mc_test_path
-    config.wav_dir = cfg.wav16_path
-    config.log_dir = cfg.logs_path
-    config.model_save_dir = cfg.models_path
-    config.convert_dir = cfg.convert_dir
+    # Model configuration.
+    parser.add_argument('--num_speakers', type=int, default=70, help='dimension of speaker labels')
+    parser.add_argument('--num_converted_wavs', type=int, default=5, help='number of wavs to convert.')
+    parser.add_argument('--resume_iters', type=int, default=None, help='step to resume for testing.')
+    parser.add_argument('--src_spk', type=str, default='bdl', help = 'target speaker.')
+    parser.add_argument('--trg_spk', type=str, default='slt', help = 'target speaker.')
+
+    # Directories.
+    parser.add_argument('--train_data_dir', type=str, default='./data/mc/train')
+    parser.add_argument('--test_data_dir', type=str, default='./data/mc/test')
+    parser.add_argument('--wav_dir', type=str, default="./data/vctk_16")
+    parser.add_argument('--log_dir', type=str, default='./logs')
+    parser.add_argument('--model_save_dir', type=str, default='./models')
+    parser.add_argument('--convert_dir', type=str, default='./converted')
+
+
+    config = parser.parse_args()
+    
+    print(config)
+
+#     config.num_speakers = 70
+#     config.num_converted_wavs = 5
+#     config.resume_iters = 
+#     config.src_spk = 'p225'
+#     config.trg_spk = 'p227'
+#         # Model configuration.
+#     config.train_data_dir =  cfg.mc_train_path
+#     config.test_data_dir = cfg.mc_test_path
+#     config.wav_dir = cfg.wav16_path
+#     config.log_dir = cfg.logs_path
+#     config.model_save_dir = cfg.models_path
+#     config.convert_dir = cfg.convert_dir
 
     if config.resume_iters is None:
         raise RuntimeError("Please specify the step number for resuming.")
