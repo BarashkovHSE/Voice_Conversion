@@ -123,13 +123,14 @@ if __name__ == '__main__':
     parser.add_argument('--src_spk', type=str, default='bdl', help = 'target speaker.')
     parser.add_argument('--trg_spk', type=str, default='slt', help = 'target speaker.')
 
+
     # Directories.
-    parser.add_argument('--train_data_dir', type=str, default='./data/mc/train')
-    parser.add_argument('--test_data_dir', type=str, default='./data/mc/test')
-    parser.add_argument('--wav_dir', type=str, default="./data/vctk_16")
-    parser.add_argument('--log_dir', type=str, default='./logs')
-    parser.add_argument('--model_save_dir', type=str, default='./models')
-    parser.add_argument('--convert_dir', type=str, default='./converted')
+    parser.add_argument('--train_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/train")
+    parser.add_argument('--test_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/test")
+    parser.add_argument('--wav_dir', type=str, default="/home/albert/Voice_Conversion/data/vctk_16")
+    parser.add_argument('--log_dir', type=str, default="/home/albert/Voice_Conversion/logs")
+    parser.add_argument('--model_save_dir', type=str, default="/home/albert/Voice_Conversion/models")
+    parser.add_argument('--convert_dir', type=str, default="/home/albert/Voice_Conversion/converted")
 
 
     config = parser.parse_args()
