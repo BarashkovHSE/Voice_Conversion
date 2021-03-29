@@ -120,8 +120,8 @@ if __name__ == '__main__':
     parser.add_argument('--num_speakers', type=int, default=70, help='dimension of speaker labels')
     parser.add_argument('--num_converted_wavs', type=int, default=6, help='number of wavs to convert.')
     parser.add_argument('-r', '--resume_iters', type=int, default=290000, help='step to resume for testing.')
-    parser.add_argument('-s', '--src_spk', type=str, default='bdl', help = 'target speaker.')
-    parser.add_argument('-t', '--trg_spk', type=str, default='slt', help = 'target speaker.')
+    parser.add_argument('-s', '--src_spk', type=str, default='p225', help = 'target speaker.')
+    parser.add_argument('-t', '--trg_spk', type=str, default='p227', help = 'target speaker.')
 
 
     # Directories.
