@@ -60,7 +60,7 @@ if __name__ == '__main__':
     config.beta2 = 0.999
     config.beta = 0.5
     config.gamma = 0.5
-    config.resume_iters = 40000
+    config.resume_iters = 45000
     config.test_iters=10000
     config.num_workers=8
     config.mode='train'
