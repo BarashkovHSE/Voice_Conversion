@@ -51,7 +51,7 @@ if __name__ == '__main__':
     config.sampling_rate = 16000
     config.batch_size = 64
     config.num_iters = 450000
-    config.num_iters_decay = 100000
+    config.num_iters_decay = 150000
     config.g_lr = 0.0001
     config.d_lr = 0.0001
     config.c_lr = 0.0001
@@ -60,8 +60,8 @@ if __name__ == '__main__':
     config.beta2 = 0.999
     config.beta = 0.5
     config.gamma = 0.5
-    config.resume_iters = 295000
-    config.test_iters=50000
+    config.resume_iters = 40000
+    config.test_iters=10000
     config.num_workers=8
     config.mode='train'
     config.use_tensorboard=True
@@ -74,6 +74,6 @@ if __name__ == '__main__':
     config.log_step = 10
     config.sample_step = 5000
     config.model_save_step = 5000
-    config.lr_update_step=1000
+    config.lr_update_step=5000
 
     main(config)
