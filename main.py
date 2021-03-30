@@ -50,7 +50,7 @@ if __name__ == '__main__':
     config.lambda_gp = 10
     config.sampling_rate = 16000
     config.batch_size = 64
-    config.num_iters = 300000
+    config.num_iters = 450000
     config.num_iters_decay = 100000
     config.g_lr = 0.0001
     config.d_lr = 0.0001
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     config.beta2 = 0.999
     config.beta = 0.5
     config.gamma = 0.5
-    config.resume_iters = 290000
+    config.resume_iters = 295000
     config.test_iters=50000
     config.num_workers=8
     config.mode='train'
