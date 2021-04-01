@@ -12,7 +12,6 @@ from data_loader import to_categorical
 import librosa
 from utils import *
 import glob
-import config as cfg
 
 # Below is the accent info for the used 70 speakers.
 
@@ -84,21 +83,20 @@ def test(config):
 
     with torch.no_grad():
         for idx, wav in enumerate(test_wavs):
+            print(len(wav))
             wav_name = basename(test_wavfiles[idx])
+            # print(wav_name)
             f0, timeaxis, sp, ap = world_decompose(wav=wav, fs=sampling_rate, frame_period=frame_period)
-            print('SP SHAPE', sp.shape)
             f0_converted = pitch_conversion(f0=f0, 
                 mean_log_src=test_loader.logf0s_mean_src, std_log_src=test_loader.logf0s_std_src, 
                 mean_log_target=test_loader.logf0s_mean_trg, std_log_target=test_loader.logf0s_std_trg)
             coded_sp = world_encode_spectral_envelop(sp=sp, fs=sampling_rate, dim=num_mcep)
-            print('CODED_SP SHAPE', coded_sp.shape)
             print("Before being fed into G: ", coded_sp.shape)
             coded_sp_norm = (coded_sp - test_loader.mcep_mean_src) / test_loader.mcep_std_src
-            print('CODED SP NORMSHAPE', coded_sp_norm.shape)
             coded_sp_norm_tensor = torch.FloatTensor(coded_sp_norm.T).unsqueeze_(0).unsqueeze_(1).to(device)
             conds_trg = torch.FloatTensor(test_loader.spk_c_trg).to(device)
             conds_org = torch.FloatTensor(test_loader.spk_c_org).to(device)
-            print('CONDS TRG SHAPE', conds_trg.shape, 'CONDS_ORG_SHAPE', conds_org.shape)
+            # print(spk_conds.size())
             coded_sp_converted_norm = G(coded_sp_norm_tensor, conds_org, conds_trg).data.cpu().numpy()
             coded_sp_converted = np.squeeze(coded_sp_converted_norm).T * test_loader.mcep_std_trg + test_loader.mcep_mean_trg
             coded_sp_converted = np.ascontiguousarray(coded_sp_converted)
