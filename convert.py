@@ -116,37 +116,37 @@ if __name__ == '__main__':
     def config():
         pass
     
-#     parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser()
 
-#     # Model configuration.
-#     parser.add_argument('--num_speakers', type=int, default=70, help='dimension of speaker labels')
-#     parser.add_argument('-n', '--num_converted_wavs', type=int, default=6, help='number of wavs to convert.')
-#     parser.add_argument('-r', '--resume_iters', type=int, default=290000, help='step to resume for testing.')
-#     parser.add_argument('-s', '--src_spk', type=str, default='p225', help = 'target speaker.')
-#     parser.add_argument('-t', '--trg_spk', type=str, default='p227', help = 'target speaker.')
+    # Model configuration.
+    parser.add_argument('--num_speakers', type=int, default=70, help='dimension of speaker labels')
+    parser.add_argument('-n', '--num_converted_wavs', type=int, default=6, help='number of wavs to convert.')
+    parser.add_argument('-r', '--resume_iters', type=int, default=290000, help='step to resume for testing.')
+    parser.add_argument('-s', '--src_spk', type=str, default='p225', help = 'target speaker.')
+    parser.add_argument('-t', '--trg_spk', type=str, default='p227', help = 'target speaker.')
 
 
-#     # Directories.
-#     parser.add_argument('--train_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/train")
-#     parser.add_argument('--test_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/test")
-#     parser.add_argument('--wav_dir', type=str, default="/home/albert/Voice_Conversion/data/vctk_16")
-#     parser.add_argument('--log_dir', type=str, default="/home/albert/Voice_Conversion/logs")
-#     parser.add_argument('--model_save_dir', type=str, default="/home/albert/Voice_Conversion/models")
-#     parser.add_argument('--convert_dir', type=str, default="/home/albert/Model3/converted")
+    # Directories.
+    parser.add_argument('--train_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/train")
+    parser.add_argument('--test_data_dir', type=str, default="/home/albert/Voice_Conversion/data/mc/test")
+    parser.add_argument('--wav_dir', type=str, default="/home/albert/Voice_Conversion/data/vctk_16")
+    parser.add_argument('--log_dir', type=str, default="/home/albert/Voice_Conversion/logs")
+    parser.add_argument('--model_save_dir', type=str, default="/home/albert/Voice_Conversion/models")
+    parser.add_argument('--convert_dir', type=str, default="/home/albert/Model3/converted")
     
-#     config = parser.parse_args()
+    cfg = parser.parse_args()
     
-    config.num_speakers = 70
-    config.num_converted_wavs = 5
-    config.resume_iters = None
-    config.src_spk = None
-    config.trg_spk = None
-    config.train_data_dir = "/home/albert/Voice_Conversion/data/mc/train"
-    config.test_data_dir = "/home/albert/Voice_Conversion/data/mc/test"
-    config.wav_dir = "/home/albert/Voice_Conversion/data/vctk_16"
-    config.log_dir = "/home/albert/Voice_Conversion/logs"
-    config.model_save_dir = "/home/albert/Voice_Conversion/models"
-    config.convert_dir = None
+    config.num_speakers = cfg.num_speakers
+    config.num_converted_wavs = cfg.num_converted_wavs
+    config.resume_iters = 15000
+    config.src_spk = cfg.src_spk
+    config.trg_spk = cfg.trg_spk
+    config.train_data_dir = cfg.train_data_dir
+    config.test_data_dir = cfg.test_data_dir
+    config.wav_dir = cfg.wav_dir
+    config.log_dir = cfg.log_dir
+    config.model_save_dir = cfg.model_save_dir
+    config.convert_dir = cfg.convert_dir
     for i in [45000, 50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000, 105000, 110000, 115000, 120000, 125000, 130000, 135000, 140000]:
         config.resume_iters = i
         for speakers in [('p227', 'p225'), ('p228', 'p225'), ('p228', 'p227'), ('p228', 'p229'), ('p229', 'p228'), ('p228', 'p232'), ('p232', 'p228'), ('p232', 'p227')]: 
