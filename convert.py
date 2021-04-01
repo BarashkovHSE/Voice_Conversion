@@ -152,7 +152,7 @@ if __name__ == '__main__':
         for speakers in [('p227', 'p225'), ('p228', 'p225'), ('p228', 'p227'), ('p228', 'p229'), ('p229', 'p228'), ('p228', 'p232'), ('p232', 'p228'), ('p232', 'p227')]: 
             config.src_spk = speakers[0]
             config.trg_spk = speakers[1]
-            config.convert_dir = f"/home/albert/converted/{i}_iters"
+            config.convert_dir = "/home/albert/converted/{}_iters".format(str(i))
             print(config)
             test(config)
             
