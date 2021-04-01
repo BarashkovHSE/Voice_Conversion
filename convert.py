@@ -150,7 +150,7 @@ if __name__ == '__main__':
     config.model_save_dir = "/home/albert/Voice_Conversion/models"
     config.convert_dir = None
     for i in [40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000, 105000, 110000, 115000, 120000, 125000, 130000, 135000, 140000]:
-        config.resume_model = i
+        config.resume_iters = i
         for speakers in [('p225', 'p227'), ('p227', 'p225'), ('p228', 'p225'), ('p228', 'p227'), ('p228', 'p229'), ('p229', 'p228'), ('p228', 'p232'), ('p232', 'p228'), ('p232', 'p227')]: 
             config.src_spk = speakers[0]
             config.trg_spk = speakers[1]
