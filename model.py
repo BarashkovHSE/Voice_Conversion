@@ -17,8 +17,8 @@ class ConditionalInstanceNormalisation(nn.Module):
         self.beta = nn.Linear(n_speakers, in_channel)
 
     def forward(self, x, c):
-        print(x)
-        print(c)
+        print(x.shape)
+        print(c.shape)
         u = torch.mean(x, dim=2, keepdim=True)
         var = torch.mean((x - u) * (x - u), dim=2, keepdim=True)
         std = torch.sqrt(var + 1e-8)
